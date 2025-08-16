@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  postgres-iam:
+    image: postgres:15
+    container_name: orchestra-postgres-iam
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=parth
+      - POSTGRES_DB=OrchestraIamDb
+    ports:
+      - "5433:5432"
+    volumes:
+      - orchestra-iam-data:/var/lib/postgresql/data
+
+  postgres-ats:
+    image: postgres:15
+    container_name: orchestra-postgres-ats
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=parth
+      - POSTGRES_DB=OrchestraAtsDb
+    ports:
+      - "5434:5432"
+    volumes:
+      - orchestra-ats-data:/var/lib/postgresql/data
+
+volumes:
+  orchestra-iam-data:
+  orchestra-ats-data: 

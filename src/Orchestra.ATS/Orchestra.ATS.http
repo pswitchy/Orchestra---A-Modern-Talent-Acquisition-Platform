@@ -1,0 +1,6 @@
+@Orchestra.ATS_HostAddress = http://localhost:5197
+
+GET {{Orchestra.ATS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
